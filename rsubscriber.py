@@ -7,10 +7,6 @@ class Subscriber:
         self.name = name
         self.ps_cli = RedisConnection.getPubSubClient()
 
-    def channelExists(self, channel):
-        rds_con = RedisConnection.getConnection()
-        return rds_con.get(channel)
-
     def addSubscription(self, channel):
         # getting pubsub client 
         # check if channel exists or not - to do 
